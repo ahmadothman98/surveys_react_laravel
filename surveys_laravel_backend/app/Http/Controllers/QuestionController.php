@@ -33,7 +33,8 @@ class QuestionController extends Controller
 
         //get all choices of the question
         foreach($questions as $question){
-            $choices = getChoices($question); 
+            $choices_controller = new ChoicesController;
+            $choices =$choices_controller -> getChoices($question->id); 
             $question -> choices = $choices;
         }
         

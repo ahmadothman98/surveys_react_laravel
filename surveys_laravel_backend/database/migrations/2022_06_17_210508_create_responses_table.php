@@ -16,6 +16,7 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
+            $table->text('text');
             $table->foreignIdFor(Choice::class);
             $table->foreignIdFor(Question::class);
             $table->timestamps();

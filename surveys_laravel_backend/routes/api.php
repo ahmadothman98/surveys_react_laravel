@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChoicesController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\ResponsesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,12 @@ Route::post('/create_survey',[SurveyController::class,'createNewSurvey'])->name(
 Route::get('/load_surveys/{id?}',[SurveyController::class,'getSurveys'])->name('get-surveys');
 
 Route::post('/add_question',[QuestionController::class,'addNewQuestion'])->name('add-question');
-Route::get('/load_questions/survey_id={survey_id}',[QuestionController::class,'getQuestions'])->name('get-question');
+Route::get('/load_questions/{survey_id}',[QuestionController::class,'getQuestions'])->name('get-question');
 
 Route::post('/add_response',[ResponsesController::class,'addResponse'])->name('add-response');
-Route::post('/get_responses/quest_id={question_id}',[ResponsesController::class,'getResponses'])->name('add-response');
+Route::get('/get_responses/quest_id={question_id}',[ResponsesController::class,'getResponses'])->name('add-response');
+Route::get('/get_resp_count/quest_id={question_id}&choice_id={choice_id}',[ResponsesController::class,'getResponseCount'])->name('add-response');
+
 
 Route::group(['middleware' => 'api'], function($router) {
     Route::post('/register', [AdminController::class, 'register']);

@@ -11,6 +11,10 @@ class ResponsesController extends Controller
     public function addResponse(Request $request){
         // add response with question_id = $question_id
         //and choice_id = $choice_id
+        $response = new Response;
+        if($request->text){
+            $response -> text = $request->text;
+        }
         $response -> question_id = $request->question_id;
         $response -> choice_id = $request->choice_id;
         $response->save();
