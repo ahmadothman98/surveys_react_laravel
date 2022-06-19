@@ -1,0 +1,28 @@
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+    background-color: #f8f8fc;
+}
+  
+.email,.password {
+    height: 25px;
+    border: 1px sold rgba(0,0,0,0,0.3);
+}
+.submit{
+    background-color: #018ed2;
+    border: 1px solid #018ed2;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: #6cc2f0;
+}
+.button-div{
+    display: flex;
+    justify-content: center;
+}
