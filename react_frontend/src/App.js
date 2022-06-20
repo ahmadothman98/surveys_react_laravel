@@ -1,9 +1,9 @@
+import React  from 'react';
 import './style.css';
-import logo from './logo.svg';
 import { useState } from 'react';
-
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Login_form from './login.js'
-import SurveyMaker from './survey.js'
+import Surveys from './survey.js'
 
 // var page_value = 0;
 // const changePage = (page) => {
@@ -19,7 +19,7 @@ function App() {
 }
 function checkLocation(location,setLocation){
   if(localStorage.getItem('token')){ 
-    return <SurveyMaker setLocation={setLocation} />
+    return <Surveys setLocation={setLocation} />
   }
   if(location=== 'login'){
     return <Login_form setLocation={setLocation} />;

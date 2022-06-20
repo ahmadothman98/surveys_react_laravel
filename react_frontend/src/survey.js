@@ -1,15 +1,20 @@
+import React  from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from "./Components/navbar";
+import Create from './create';
+const Surveys = (props) =>{
 
-const SurveyMaker = (props) =>{
-    function clicked(){
-        localStorage.removeItem('token')
-        var setLocation = props.setLocation;
-        setLocation('login');
-    }
     
     return(
-        <div>
-            <button onClick={clicked}>Log Out</button>
-        </div>
+        <Router>
+            <Navbar setLocation = {props.setLocation}/>
+            <Routes>
+                <Route exact path = "/create" element={<Create />} />
+                <Route exact path='/my_surveys'> 
+
+                </Route>
+            </Routes>
+        </Router>
     )
 }
-export default SurveyMaker;
+export default Surveys;
