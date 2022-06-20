@@ -19,7 +19,7 @@ function App() {
 }
 function checkLocation(location,setLocation){
   if(localStorage.getItem('token')){ 
-    return <SurveyMaker />
+    return <SurveyMaker setLocation={setLocation} />
   }
   if(location=== 'login'){
     return <Login_form setLocation={setLocation} />;

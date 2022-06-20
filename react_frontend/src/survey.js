@@ -1,8 +1,14 @@
-const SurveyMaker = () =>{
+
+const SurveyMaker = (props) =>{
+    function clicked(){
+        localStorage.removeItem('token')
+        var setLocation = props.setLocation;
+        setLocation('login');
+    }
     
     return(
         <div>
-            <h1>This work</h1>
+            <button onClick={clicked}>Log Out</button>
         </div>
     )
 }
