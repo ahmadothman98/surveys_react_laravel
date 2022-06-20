@@ -3,7 +3,7 @@ import React from 'react'
 const Create = () =>{
     return(
         <div>
-            <h1>Hello World!</h1>
+            <h1>Create new surveys!</h1>
         </div>
     )
 }
