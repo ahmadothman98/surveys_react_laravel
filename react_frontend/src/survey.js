@@ -2,7 +2,7 @@ const SurveyMaker = () =>{
     
     return(
         <div>
-            <h1>This fkn work</h1>
+            <h1>This work</h1>
         </div>
     )
 }
