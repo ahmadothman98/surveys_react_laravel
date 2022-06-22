@@ -1,31 +1,30 @@
 import React  from 'react';
 import './style.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Login_form from './login.js'
-import Surveys from './survey.js'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Login_form from './login.js';
+import Surveys from './survey.js';
+import Create from './create';
+import MySurveys from './my_surveys';
+import Navbar from './Components/navbar';
 
 // var page_value = 0;
 // const changePage = (page) => {
 //   page_value = page;
 // }
 function App() {
-  const [location,setLocation] = useState("login"); 
   return (
     <div className='app'>
-      {checkLocation(location,setLocation)}
+      <Router>
+      <Navbar />
+        <Routes>
+            <Route exact path = "/login" element={<Login_form />} />
+            <Route exact path='/surveys' element={<Surveys />} /> 
+            <Route exact path = "/create" element={<Create />} />
+            <Route exact path='/my_surveys' element={<MySurveys />} /> 
+        </Routes>
+    </Router>    
     </div>
   );
-}
-function checkLocation(location,setLocation){
-  if(localStorage.getItem('token')){ 
-    return <Surveys setLocation={setLocation} />
-  }
-  if(location=== 'login'){
-    return <Login_form setLocation={setLocation} />;
-  }
-
-
-
 }
 export default App;

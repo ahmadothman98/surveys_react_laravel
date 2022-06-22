@@ -1,25 +1,27 @@
 import React  from 'react';
-import {Link} from 'react-router-dom';
-
-const Navbar = (props) =>{
+import {NavLink, useLocation} from 'react-router-dom';
+import { Location } from 'react-router-dom';
+const Navbar = () =>{
+    const location = useLocation();
+    console.log(location);
     
     function clicked(){
-        localStorage.removeItem('token')
-        const setLocation = props.setLocation;
-        setLocation('login');
+        localStorage.removeItem("token")
     }
-
-    return(
-       <div className="navbar">
-            <div>
-            <Link to="/create">Create Surveys</Link>
-            <Link to="/my_surveys">My Surveys</Link>
+    if(location.pathname !== "/login"){
+        return(
+            <div className="navbar">
+                 <div>
+                 <NavLink to="/create">Create Surveys</NavLink>
+                 <NavLink to="/my_surveys">My Surveys</NavLink>
+                 </div>
+                 
+                 <NavLink to="/login">
+                     <button onClick={clicked}>Log Out</button>
+                 </NavLink>
             </div>
-            
-            <div>
-                <button onClick={clicked}>Log Out</button>
-            </div>
-       </div>
-    )
+         )
+    }
+    
 }
 export default Navbar;

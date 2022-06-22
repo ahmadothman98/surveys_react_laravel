@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Navbar from './Components/navbar';
 const MySurveys = () =>{
     return(
         <div>
