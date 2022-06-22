@@ -27,7 +27,7 @@ const Login_form = (props)=>{
   }
   
   return(  
-      <div>
+      <div className='login-page'>
       <h2>Welcome to SurveyMaker</h2>
       <form className='login-form' onSubmit={login}>
           <div className="input-div">
