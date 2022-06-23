@@ -14,6 +14,18 @@ const Create = () =>{
                     setTitle(e.target.value);
                 }}
                 />
+                <p>Questions</p>
+                <input type="text"
+                value ={title}
+                onChange = {(e)=>{
+                    setTitle(e.target.value);
+                }}
+                />
+                <button>Add Question</button>
+                <input
+                type="submit"
+                value="Submit Survey"
+                />
             </form>
         </div>
     )
